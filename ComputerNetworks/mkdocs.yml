@@ -1,0 +1,123 @@
+site_name: Computer Networks Notes
+site_url: https://tensofermi.github.io/notes/ComputerNetworks/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/network.svg
+  favicon: logo/network.svg
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 概述: index.md
+  - 第1章 网络基础:
+    - 章节概览: chapter_01_foundations/index.md
+    - 分层、封装与协议: chapter_01_foundations/01_layering_and_encapsulation.md
+    - 分组交换与网络性能: chapter_01_foundations/02_packet_switching_and_performance.md
+  - 第2章 应用层:
+    - 章节概览: chapter_02_application/index.md
+    - HTTP 与 HTTPS: chapter_02_application/01_http_https.md
+    - DNS: chapter_02_application/02_dns.md
+    - 邮件、Socket 与 CDN: chapter_02_application/03_email_socket_cdn.md
+  - 第3章 传输层:
+    - 章节概览: chapter_03_transport/index.md
+    - UDP 与 TCP: chapter_03_transport/01_udp_tcp.md
+    - 可靠传输: chapter_03_transport/02_reliable_transport.md
+    - 流量控制与拥塞控制: chapter_03_transport/03_flow_congestion_control.md
+  - 第4章 网络层:
+    - 章节概览: chapter_04_network/index.md
+    - IPv4、子网与地址规划: chapter_04_network/01_ip_addressing_subnetting.md
+    - IPv6、NAT 与 ICMP: chapter_04_network/02_ipv6_nat_icmp.md
+    - 转发与路由: chapter_04_network/03_forwarding_routing.md
+  - 第5章 链路层与局域网:
+    - 章节概览: chapter_05_link/index.md
+    - 差错检测与介质访问: chapter_05_link/01_error_detection_mac.md
+    - 以太网、Wi-Fi 与 ARP: chapter_05_link/02_ethernet_wifi_arp.md
+  - 第6章 网络安全:
+    - 章节概览: chapter_06_security/index.md
+    - TLS 与可信连接: chapter_06_security/01_tls.md
+    - 基本威胁与分层防御: chapter_06_security/02_threats_defenses.md
+  - 第7章 综合案例:
+    - 章节概览: chapter_07_case_study/index.md
+    - 从输入 URL 到页面出现: chapter_07_case_study/01_url_to_page.md
+  - 第8章 诊断与复习:
+    - 章节概览: chapter_08_diagnostics/index.md
+    - 诊断工具与排障路径: chapter_08_diagnostics/01_diagnostic_tools.md
+    - 自测题与答案: chapter_08_diagnostics/02_review_self_test.md
+  - 参考资料: references.md

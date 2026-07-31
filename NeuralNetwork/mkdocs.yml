@@ -1,0 +1,175 @@
+site_name: Neural Network Notes
+site_url: https://tensofermi.github.io/notes/NeuralNetwork/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/mlp.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - markdown.extensions.def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - "概述": index.md
+
+  - "预备知识":
+    - "机器学习地图": prerequisites/ml_overview.md
+    - "模型训练就是函数拟合": prerequisites/training_as_function_fitting.md
+    - "概率分布、熵与配分函数": prerequisites/probability_entropy_partition.md
+    - "信息熵、交叉熵与 KL 散度": prerequisites/entropy_cross_entropy_kl.md
+    - "最大似然与前向 KL": prerequisites/mle_forward_kl.md
+    - "推断、统计推断与信念传播": prerequisites/inference_belief_propagation.md
+    - "优化方法：梯度下降、Gauss-Newton 与 LM": prerequisites/optimization_methods.md
+    - "PCA：从协方差到主成分": prerequisites/pca.md
+    - "计算复杂度速览": prerequisites/complexity_classes.md
+
+  - "PyTorch 教程":
+    - "总览：常用 torch 命令表": pytorch/index.md
+    - "Tensor、Shape、Dtype 与 Device": pytorch/tensor_shape_dtype_device.md
+    - "常用 Tensor 操作：索引、gather、拼接、拆分与矩阵乘法": pytorch/tensor_ops.md
+    - "Autograd 与计算图": pytorch/autograd.md
+    - "nn.Module 的核心机制": pytorch/nn_module.md
+    - "常用层、激活函数与损失函数": pytorch/layers_losses.md
+    - "训练循环：forward、backward、optimizer.step": pytorch/training_loop.md
+    - "保存、加载与 train/eval 模式": pytorch/state_dict_train_eval.md
+    - "torch.compile：从 eager mode 到编译加速": pytorch/torch_compile.md
+
+  - "经典神经网络结构":
+    - "总览": classic_architectures/index.md
+    - "MLP：最基本的全连接网络": classic_architectures/mlp.md
+    - "CNN：局部连接、权重共享与特征图": classic_architectures/cnn.md
+    - "RNN、GRU 与 LSTM": classic_architectures/rnn_lstm.md
+    - "PixelCNN：二维格点上的自回归模型": classic_architectures/pixelcnn.md
+    - "RBM：能量模型与神经网络量子态": classic_architectures/rbm.md
+
+  - "NNQS 主线":
+    - "从薛定谔方程到 NNQS": from_schrodinger_to_nnqs.md
+    - "模型结构": model_architecture.md
+    - "VMC 训练": vmc_training.md
+    - "VMC 的闭环训练视角": vmc_closed_loop.md
+
+  - "Transformer":
+    - "总览": Transformer/index.md
+    - "Token、Embedding 与 Shape": Transformer/tokenization_embedding.md
+    - "位置信息": Transformer/position_encoding.md
+    - "Attention 机制": Transformer/attention.md
+    - "Encoder 的基本结构": Transformer/encoder.md
+    - "Decoder 的基本结构": Transformer/decoder.md
+    - "KV Cache": Transformer/kv_cache.md
+    - "训练目标与 Mask": Transformer/training.md
+    - "Transformer 与 NNQS": Transformer/transformer_nnqs.md
+    - "Decoder-only 的直觉问答": Transformer/decoder_only_intuition.md
+    - "自回归、贝叶斯递推与语言模型": Transformer/autoregressive_probability.md
+    - "Attention 与 Potts 模型视角": Transformer/attention_potts.md
+
+  - "强化学习":
+    - "策略、价值函数与环境交互": rl/policy_value_environment.md
+    - "强化学习中的 Monte Carlo": rl/monte_carlo.md
+    - "奖励函数设计": rl/reward_design.md
+    - "目标函数、折扣回报与策略梯度": rl/objective_policy_gradient.md
+    - "PPO 的基本动机": rl/ppo.md
+    - "机器人 Scaling Law 与具身智能": rl/robotics_scaling.md
+    - "实践：AlphaZero 五子棋": rl/alphazero_gomoku.md
+
+  - "神经网络与物理":
+    - "神经网络发展与统计物理视角": physics_ml/history_statphys.md
+    - "CNN 识别量子相变": physics_ml/cnn_quantum_phase.md
+    - "统计物理视角下的大模型训练": physics_ml/statphys_llm_training.md
+    - "Scaling Law：模型、数据与算力": physics_ml/scaling_laws.md
+    - "NTK、μP 与无限宽极限": physics_ml/ntk_mup_infinite_width.md
+
+  - "招聘备考专题":
+    - "总览：从知识点到题型": interview/index.md
+    - "华为、字节、米哈游考点地图": interview/company_map.md
+    - "数学、概率与线性代数题": interview/math_probability.md
+    - "机器学习基础题": interview/ml_basics.md
+    - "深度学习与训练题": interview/deep_learning_training.md
+    - "Transformer 与 LLM 题": interview/transformer_llm.md
+    - "PyTorch 与工程实现题": interview/pytorch_engineering.md
+    - "数值精度、显存与推理优化题": interview/precision_inference.md
+    - "强化学习与后训练题": interview/rl_post_training.md
+    - "AI 方向编程题思路": interview/coding_ai.md
+
+  - "工程导读":
+    - "大模型 Infra 全景：从硬件到服务": infra_overview.md
+    - "从模型代码到系统代码": code_walkthrough.md
+    - "数值精度": numerical_precision.md
+    - "工程公式速查": formula_cheatsheet.md
+    - "工程正确性与性能验证": verification.md

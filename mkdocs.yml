@@ -1,0 +1,62 @@
+site_name: Tensofermi Notes
+site_url: https://tensofermi.github.io/notes/
+repo_url: https://github.com/Tensofermi/notes
+repo_name: Tensofermi/notes
+docs_dir: home
+site_dir: _site
+
+theme:
+  name: material
+  language: zh
+  font: false
+  logo: logo/notes.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+hooks:
+  - mkdocs_file_search.py
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 笔记总览: index.md
+

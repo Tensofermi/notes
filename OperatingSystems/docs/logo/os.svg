@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Operating systems logo">
+  <rect x="6" y="8" width="52" height="48" rx="7" fill="#3f51b5"/>
+  <rect x="13" y="15" width="38" height="24" rx="3" fill="#ffffff"/>
+  <path d="M18 22h12v4H18zm0 8h20v4H18z" fill="#3f51b5"/>
+  <circle cx="19" cy="47" r="3" fill="#ffffff"/>
+  <circle cx="32" cy="47" r="3" fill="#ffffff"/>
+  <circle cx="45" cy="47" r="3" fill="#ffffff"/>
+</svg>

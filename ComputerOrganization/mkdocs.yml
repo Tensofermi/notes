@@ -1,0 +1,123 @@
+site_name: Computer Organization Notes
+site_url: https://tensofermi.github.io/notes/ComputerOrganization/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/computer_organization.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 概述: index.md
+  - 第1章 抽象层次与整机视角:
+    - 章节概览: chapter_01_abstraction/index.md
+    - 抽象层次与接口契约: chapter_01_abstraction/abstraction_layers.md
+    - 计算机体系结构的历史演进: chapter_01_abstraction/historical_evolution.md
+  - 第2章 信息表示与数字逻辑:
+    - 章节概览: chapter_02_representation_logic/index.md
+    - 数制、补码、浮点数与字符: chapter_02_representation_logic/number_representation.md
+    - 布尔逻辑、组合电路与时序电路: chapter_02_representation_logic/digital_logic.md
+  - 第3章 指令系统结构:
+    - 章节概览: chapter_03_isa/index.md
+    - 指令格式与寻址方式: chapter_03_isa/instruction_format_addressing.md
+    - 最小汇编程序与 RISC/CISC: chapter_03_isa/assembly_risc_cisc.md
+  - 第4章 CPU 数据通路与控制:
+    - 章节概览: chapter_04_cpu/index.md
+    - 数据通路与指令周期: chapter_04_cpu/datapath_instruction_cycle.md
+    - 控制器：把指令变成控制信号: chapter_04_cpu/control_unit.md
+  - 第5章 流水线与冒险:
+    - 章节概览: chapter_05_pipeline/index.md
+    - 流水线、冒险、转发与停顿: chapter_05_pipeline/pipeline_hazards.md
+    - 控制冒险与分支预测: chapter_05_pipeline/branch_prediction.md
+  - 第6章 存储层次:
+    - 章节概览: chapter_06_memory/index.md
+    - 局部性、Cache 与主存: chapter_06_memory/hierarchy_cache.md
+    - 虚拟存储的硬件支持: chapter_06_memory/virtual_memory_hardware.md
+  - 第7章 I/O、性能与并行:
+    - 章节概览: chapter_07_io_parallel/index.md
+    - 总线、中断、DMA 与存储设备: chapter_07_io_parallel/io_interrupt_dma_storage.md
+    - 性能公式与 Amdahl 定律: chapter_07_io_parallel/performance_amdahl.md
+    - SIMD、多核与缓存一致性: chapter_07_io_parallel/parallelism_consistency.md
+  - 第8章 综合案例:
+    - 章节概览: chapter_08_case_study/index.md
+    - 一条 load/add/store 如何贯穿机器: chapter_08_case_study/load_add_store_walkthrough.md
+    - 跨层性能诊断与设计权衡: chapter_08_case_study/bottleneck_diagnosis.md
+  - 综合自测: self_assessment.md
+  - 参考资料: references.md

@@ -1,0 +1,126 @@
+site_name: Monte Carlo Simulation
+site_url: https://tensofermi.github.io/notes/MonteCarlo/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/dice.png
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - markdown.extensions.def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+
+extra:
+  social:
+      - icon: octicons/home-fill-24
+        link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+###########################################
+###########################################
+nav:
+  - "概述": index.md
+
+  - "蒙卡基础": 
+    - "蒙卡原理": basic/mc_abc.md
+    - "随机数产生器": basic/rng.md
+    - "数据处理与误差估计": basic/data_process.md
+    - "强化学习中的蒙卡": basic/rl_mc.md
+
+  - "相变理论基础":
+    - "相变理论概览": rg-fss/phase_overview.md
+    - "关联函数范式": rg-fss/correlation_paradigm.md
+    - "重整化群": rg-fss/rg.md
+    - "有限尺寸标度": rg-fss/fss.md
+    - "Mermin-Wagner 定理": rg-fss/mermin_wagner.md
+    - "BKT 相变": rg-fss/bkt.md
+    - "长程相互作用与普适类": rg-fss/lr_universality.md
+
+  - "常用更新算法":
+    - "Metropolis 更新": cluster/metropolis.md
+    - "集团算法": cluster/cluster_algo.md
+    - "蠕虫算法": cluster/loop_cluster.md
+    - "几何观测量": cluster/geo_obs_list.md
+
+  - "长程体系与更新算法":
+    - "长程体系定义和困难": lr_clock_tech/lr_def.md
+    - "Clock算法": lr_clock_tech/clock_tech.md
+    - "其他长程算法": lr_clock_tech/other_lr_algos.md
+
+  - "世界线更新算法": 
+    - "连续时间 Worm": qworm/CTQW.md
+    - "连续空间 Worm": qworm/CSQW.md 
+
+  - "SSE 随机级数展开":
+    - "SSE 原理与算法": sse/basic.md
+
+  - "辅助场蒙卡":
+    - "辅助场基本思想": afqmc/basic_idea.md
+    - "零温算法": afqmc/zero_T.md
+    - "有限温算法": afqmc/finite_T.md
+    

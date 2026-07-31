@@ -1,0 +1,125 @@
+site_name: Operating Systems Notes
+site_url: https://tensofermi.github.io/notes/OperatingSystems/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/os.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 概述: index.md
+  - 第1章 操作系统基础:
+    - 章节概览: chapter_01_foundations/index.md
+    - 操作系统的角色、结构与启动: chapter_01_foundations/01_os_roles_architecture_boot.md
+    - 内核态、系统调用、中断与异常: chapter_01_foundations/02_kernel_user_syscalls_interrupts.md
+  - 第2章 进程、线程与调度:
+    - 章节概览: chapter_02_processes/index.md
+    - 进程、线程与上下文切换: chapter_02_processes/01_process_thread_context.md
+    - 生命周期、调度与进程间通信: chapter_02_processes/02_scheduling_ipc.md
+  - 第3章 并发、同步与死锁:
+    - 章节概览: chapter_03_concurrency/index.md
+    - 竞态、原子性与锁: chapter_03_concurrency/01_races_atomicity_locks.md
+    - 信号量与条件变量: chapter_03_concurrency/02_semaphores_condition_variables.md
+    - 经典同步问题: chapter_03_concurrency/03_classic_synchronization.md
+    - 死锁、检测与恢复: chapter_03_concurrency/04_deadlock.md
+  - 第4章 虚拟内存:
+    - 章节概览: chapter_04_memory/index.md
+    - 地址空间与分页: chapter_04_memory/01_address_space_paging.md
+    - 页表、TLB 与缺页: chapter_04_memory/02_page_tables_tlb_faults.md
+    - 页面置换与内存分配: chapter_04_memory/03_replacement_allocation.md
+  - 第5章 文件系统与 I/O:
+    - 章节概览: chapter_05_storage_io/index.md
+    - 文件、目录与 inode: chapter_05_storage_io/01_files_directories_inodes.md
+    - 崩溃一致性、日志与磁盘调度: chapter_05_storage_io/02_journaling_crash_disk.md
+    - I/O 模型与设备驱动: chapter_05_storage_io/03_io_models_drivers.md
+    - 中断、DMA 与缓存层次: chapter_05_storage_io/04_interrupts_dma_cache.md
+  - 第6章 保护、安全与虚拟化:
+    - 章节概览: chapter_06_protection_virtualization/index.md
+    - 保护机制与系统安全: chapter_06_protection_virtualization/01_protection_security.md
+    - 虚拟机与容器: chapter_06_protection_virtualization/02_virtual_machines_containers.md
+  - 第7章 综合案例与诊断:
+    - 章节概览: chapter_07_case_diagnostics/index.md
+    - 一次 read 系统调用的完整旅程: chapter_07_case_diagnostics/01_read_system_call_path.md
+    - 诊断工具、实验方法与自测: chapter_07_case_diagnostics/02_diagnostics_self_test.md
+  - 参考资料: references.md

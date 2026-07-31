@@ -1,0 +1,98 @@
+site_name: Quantum Information Notes
+site_url: https://tensofermi.github.io/notes/QuantumInformation/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/qubit.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 概述: index.md
+  - 第一章 经典计算: classical_computation.md
+  - 第二章 量子力学基础知识: quantum_mechanics.md
+  - 第三章 量子线路: quantum_circuits.md
+  - 第四章 量子 Fourier 变换: quantum_fourier_transform.md
+  - 第五章 量子搜索算法: quantum_search.md
+  - 第六章 量子通信: quantum_communication.md
+  - 第七章 量子噪声和量子操作: noise_and_operations.md
+  - 第八章 量子纠错: quantum_error_correction.md
+  - 第九章 量子模拟: quantum_simulation.md
+  - 第十章 物理实现与容错计算: physical_implementation_and_fault_tolerance.md

@@ -1,0 +1,152 @@
+site_name: Thermodynamics and Statistical Physics Notes
+site_url: https://tensofermi.github.io/notes/ThermodynamicsStatisticalPhysics/
+
+theme:
+  name: material
+  language: 'zh'
+  font: false
+  logo: logo/thermo.svg
+  favicon: logo/main.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+hooks:
+  - ../mkdocs_file_search.py
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://tensofermi.github.io/notes/_shared/mathjax/es5/tex-chtml.js
+
+extra:
+  social:
+    - icon: octicons/home-fill-24
+      link: https://tensofermi.github.io/
+
+use_directory_urls: false
+
+nav:
+  - 概述: index.md
+  - 第1章 热力学的基本概念:
+    - 章节概览: chapter_01_basic_concepts/index.md
+    - 基本概念: chapter_01_basic_concepts/01_basic_concepts.md
+    - 物态方程: chapter_01_basic_concepts/02_equation_of_state.md
+    - 准静态过程、功的表示: chapter_01_basic_concepts/03_quasi_static_work.md
+    - 热力学第一定律、热容: chapter_01_basic_concepts/04_first_law_heat_capacity.md
+    - 理想气体热学过程的相关计算: chapter_01_basic_concepts/05_ideal_gas_processes.md
+    - 卡诺循环以及效率: chapter_01_basic_concepts/06_carnot_cycle.md
+    - 热力学第二定律: chapter_01_basic_concepts/07_second_law.md
+    - 卡诺定理、热力学温标存在: chapter_01_basic_concepts/08_carnot_theorem_temperature_scale.md
+    - 克劳修斯不等式、熵的概念、熵增原理: chapter_01_basic_concepts/09_clausius_entropy.md
+    - 热力学基本方程、理想气体的熵与相关计算: chapter_01_basic_concepts/10_fundamental_equation_entropy.md
+    - 自由能、Gibbs函数: chapter_01_basic_concepts/11_free_energy_gibbs.md
+  - 第2章 均匀体系的热力学性质:
+    - 章节概览: chapter_02_uniform_system/index.md
+    - 四个特性函数的微分方程以及Maxwell关系: chapter_02_uniform_system/01_maxwell_relations.md
+    - 特性函数、G-H方程: chapter_02_uniform_system/02_characteristic_functions_gh.md
+    - 范氏气体节流过程、焦汤系数: chapter_02_uniform_system/03_joule_thomson.md
+    - 热辐射、磁介质的热学性质: chapter_02_uniform_system/04_radiation_magnetic_media.md
+  - 第3章 单元体系相变:
+    - 章节概览: chapter_03_phase_transition/index.md
+    - 热动平衡判据: chapter_03_phase_transition/01_thermal_equilibrium_criteria.md
+    - 化学势的引入、平衡判据、稳定平衡判据: chapter_03_phase_transition/02_chemical_potential_stability.md
+    - 克拉伯龙方程: chapter_03_phase_transition/03_clapeyron_equation.md
+    - Maxwell等面积规则、范氏气体临界点位置: chapter_03_phase_transition/04_maxwell_equal_area.md
+    - 液滴的形成: chapter_03_phase_transition/05_droplet_formation.md
+    - 朗道连续相变理论（求临界指数）: chapter_03_phase_transition/06_landau_phase_transition.md
+  - 第4章 多元体系平衡:
+    - 章节概览: chapter_04_multicomponent_system/index.md
+    - 多元体系热力学基本方程、复相平衡、Gibbs相律: chapter_04_multicomponent_system/01_fundamental_equation_phase_rule.md
+    - 混合理想气体、Gibbs佯谬: chapter_04_multicomponent_system/02_ideal_gas_mixture_gibbs_paradox.md
+    - 化学平衡和化学常数: chapter_04_multicomponent_system/03_chemical_equilibrium.md
+    - 理想溶液: chapter_04_multicomponent_system/04_ideal_solution.md
+    - 能斯特定理和热力学第三定律: chapter_04_multicomponent_system/05_nernst_theorem.md
+  - 第5章 分子动理学:
+    - 章节概览: chapter_05_kinetic_theory/index.md
+    - 碰壁数、压强、温度的微观表达与范氏气体修正: chapter_05_kinetic_theory/01_collision_pressure_temperature.md
+    - 速度分布: chapter_05_kinetic_theory/02_velocity_distribution.md
+    - 输运过程、平均自由程: chapter_05_kinetic_theory/03_transport_mean_free_path.md
+  - 第6章 近独立子系最概然分布:
+    - 章节概览: chapter_06_most_probable_distribution/index.md
+    - 统计物理的基本概念与描述: chapter_06_most_probable_distribution/01_statistical_basics.md
+    - 由三种状态数推导三种最概然分布: chapter_06_most_probable_distribution/02_most_probable_distributions.md
+  - 第7章 Boltzmann统计理论:
+    - 章节概览: chapter_07_boltzmann_statistics/index.md
+    - 利用粒子配分函数推导热力学量: chapter_07_boltzmann_statistics/01_partition_function_thermo.md
+    - 二能级系统: chapter_07_boltzmann_statistics/02_two_level_system.md
+    - 理想气体平动热力学量与Maxwell速度分布: chapter_07_boltzmann_statistics/03_ideal_gas_translation.md
+    - 广义能量均分定理与黑体辐射: chapter_07_boltzmann_statistics/04_equipartition_blackbody.md
+    - 理想气体的热力学量: chapter_07_boltzmann_statistics/05_ideal_gas_thermo.md
+    - 固体热容理论: chapter_07_boltzmann_statistics/06_solid_heat_capacity.md
+  - 第8章 Bose/Fermi统计理论:
+    - 章节概览: chapter_08_bose_fermi_statistics/index.md
+    - Bose气体和Fermi气体的热力学量: chapter_08_bose_fermi_statistics/01_bose_fermi_thermo.md
+    - Bose-Einstein凝聚: chapter_08_bose_fermi_statistics/02_bose_einstein_condensation.md
+    - 辐射系统中的光子气体: chapter_08_bose_fermi_statistics/03_photon_gas.md
+    - 金属中的自由电子气体: chapter_08_bose_fermi_statistics/04_free_electron_gas.md
+  - 第9章 系综理论:
+    - 章节概览: chapter_09_ensembles/index.md
+    - 相空间与刘维尔定理: chapter_09_ensembles/01_phase_space_liouville.md
+    - 微正则系综: chapter_09_ensembles/02_microcanonical_ensemble.md
+    - 正则系综: chapter_09_ensembles/03_canonical_ensemble.md
+    - 巨正则系综: chapter_09_ensembles/04_grand_canonical_ensemble.md
+  - 参考资料: references.md
