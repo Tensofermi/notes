@@ -31,4 +31,6 @@ for site in "${SITES[@]}"; do
   )
 done
 
+python scripts/generate_legacy_redirects.py "$OUTPUT_DIR"
+
 echo "All notes built in ${OUTPUT_DIR}"
