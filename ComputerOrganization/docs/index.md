@@ -12,7 +12,7 @@
 c = a + b;
 ```
 
-它可能被翻译成一次 `load`、一次 `add` 和一次 `store`。短短三条指令会牵动寄存器、ALU、控制器、流水线、cache、页表、总线和主存。第 8 章会把这条路径完整走一遍。
+它可能被翻译成一次 `load`、一次 `add` 和一次 `store`。短短三条指令会牵动寄存器、ALU、控制器、流水线、cache、页表、总线和主存。[从 load 到 store](chapter_08_case_study/load_add_store_walkthrough.md)会把这条路径完整走一遍。
 
 ## 全站知识地图
 
@@ -28,8 +28,14 @@ c = a + b;
 
 按章节顺序读最平滑。第一次学习时，先抓住三条主线：**状态存在哪里、数据往哪里走、谁决定下一步**。遇到细节时反复追问它属于哪条主线，知识就不会散成器件清单。
 
-每章末尾都有自测，最后还有[综合自测](self_assessment.md)。若一个概念能用自己的话解释，并能在最小例子中手算一遍，才算真正掌握。
+| 阶段 | 学习路径 | 检验方式 |
+| --- | --- | --- |
+| 第 1–4 章 | 信息表示、数字逻辑、指令和[函数调用约定](chapter_03_isa/calling_convention.md) | 画出寄存器更新并读出简短汇编 |
+| 第 5–8 章 | CPU、流水线、Cache 和[地址翻译](chapter_06_memory/virtual_memory_hardware.md) | 跟踪一条 load，解释停顿和三种访存结果 |
+| 第 9–11 章 | DMA、设备 I/O、[GPU 与机器拓扑](chapter_07_io_parallel/gpu_and_server_topology.md) | 画出[一批数据从磁盘到 GPU](chapter_08_case_study/storage_to_gpu.md)的路径并估算瓶颈 |
+
+先写下自己的预测，再对照算例或[综合自测](self_assessment.md)。读到页表时，可以和<a href="../OperatingSystems/chapter_04_memory/01_address_space_paging.html">操作系统的分页</a>共用同一个地址算例。课程笔记可搭配 [Berkeley CS 61C](https://notes.cs61c.org/)和 [Nand to Tetris](https://www.nand2tetris.org/course)补看图解与硬件项目。
 
 ## 范围与限制
 
-本站偏向通用处理器的基础机制，示例主要使用简化的 RISC-V 风格指令。晶体管工艺、GPU 专用微体系结构、复杂一致性协议的形式化证明只作必要联系；目标是建立能迁移到具体机器手册的骨架，而非替代芯片设计教材。
+核心课聚焦通用处理器的基础机制，示例主要用简化的 RISC-V 指令。后段把同样的思路用于 GPU、显存与设备互连。遇到真实设备时，以配置、拓扑和观测数据来校正课内模型。

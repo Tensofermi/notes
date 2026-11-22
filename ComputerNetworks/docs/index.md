@@ -10,14 +10,14 @@
 
 ## 学习路线
 
-1. [网络基础](chapter_01_foundations/index.md)：先掌握分层、封装、分组交换与性能指标。
-2. [应用层](chapter_02_application/index.md)：从 HTTP、DNS、邮件、Socket 和 CDN 看用户可见的网络服务。
-3. [传输层](chapter_03_transport/index.md)：理解 UDP、TCP、可靠性、流量控制与拥塞控制。
-4. [网络层](chapter_04_network/index.md)：学习 IP 地址、子网、NAT、ICMP、转发与路由。
-5. [链路层](chapter_05_link/index.md)：理解一跳之内的帧、差错检测、MAC、以太网、Wi-Fi 与 ARP。
-6. [网络安全](chapter_06_security/index.md)：理解 TLS 以及常见攻击为何能发生。
-7. [综合案例](chapter_07_case_study/index.md)：把 URL 到页面出现的全流程串成一条因果链。
-8. [诊断与复习](chapter_08_diagnostics/index.md)：用真实工具把“网络不通”缩小为可验证的问题。
+| 阶段 | 从哪里读 | 先做哪道练习 |
+| --- | --- | --- |
+| 第 1–2 章：看见一次请求 | [网络基础](chapter_01_foundations/index.md)、[应用层](chapter_02_application/index.md) | 启动[本机 HTTP 服务](chapter_02_application/04_socket_and_listening.md)，比较连接失败与 HTTP 404 |
+| 第 3–4 章：把数据可靠送达 | [可靠传输](chapter_03_transport/02_reliable_transport.md)、[流量与拥塞控制](chapter_03_transport/03_flow_congestion_control.md) | 手推丢数据、丢 ACK 和乱序时的发送与确认 |
+| 第 5–7 章：找到路径与信任边界 | [网络层](chapter_04_network/index.md)、[链路层](chapter_05_link/index.md)、[TLS 与远程访问](chapter_06_security/index.md) | 标注跨子网请求每一段的地址和身份检查 |
+| 第 8–11 章：把机制接到实际系统 | [虚拟网络](chapter_09_virtual_network/01_interfaces_bridges_tunnels.md)、[服务入口](chapter_09_virtual_network/02_service_discovery_proxies.md)、[数据中心互连](chapter_10_data_center/index.md) | 用[Agent 工作站](chapter_07_case_study/02_agent_workstation.md)追踪一次请求与任务 |
+
+第一次学习可按表从上往下读。已有经验时，可先用[诊断工具与排障路径](chapter_08_diagnostics/01_diagnostic_tools.md)复盘一次故障，再补相应概念。课程可以搭配 [Kurose & Ross 交互习题](https://www-net.cs.umass.edu/kurose_ross/interactive/index.php)和 [Stanford CS144](https://web.stanford.edu/class/cs144/)的递进实验。
 
 ## 一个先行的直觉
 

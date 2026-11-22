@@ -39,7 +39,7 @@ ssize_t n = read(fd, buf, 4096);
   -> 返回用户态
 ```
 
-如果数据已经在页缓存中，磁盘可能完全不参与；如果数据不在缓存中，线程可能睡眠，让出 CPU，直到设备完成 I/O。这个例子把特权级、调度、虚拟内存、文件系统、设备驱动和并发同步连成了一条线，也是本笔记最后的综合案例。
+如果数据已经在页缓存中，磁盘可能完全不参与；如果数据不在缓存中，线程可能睡眠，让出 CPU，直到设备完成 I/O。这个例子把特权级、调度、虚拟内存、文件系统、设备驱动和并发同步连成了一条线，可以在[读系统调用案例](chapter_07_case_diagnostics/01_read_system_call_path.md)逐步跟踪。
 
 ## 全局心智模型
 
@@ -57,28 +57,16 @@ ssize_t n = read(fd, buf, 4096);
 
 这个模型比“内核是一个一直运行的大程序”更准确：没有用户工作或外部事件时，内核通常没有独立的业务要做；它主要在需要仲裁和服务时获得控制权。
 
-## 内容结构
+## 学习路线
 
-| 章节 | 主要问题 |
-| --- | --- |
-| 第1章 | [操作系统怎样把硬件变成受保护的服务？](chapter_01_foundations/index.md) |
-| 第2章 | [怎样表示执行流，并在有限 CPU 上调度它们？](chapter_02_processes/index.md) |
-| 第3章 | [并发访问为何出错，怎样同步并避免死锁？](chapter_03_concurrency/index.md) |
-| 第4章 | [怎样让每个进程拥有独立、按需扩展的地址空间？](chapter_04_memory/index.md) |
-| 第5章 | [怎样持久保存数据并高效驱动慢速、异步的设备？](chapter_05_storage_io/index.md) |
-| 第6章 | [怎样建立安全边界，并在一台机器上运行多个系统视图？](chapter_06_protection_virtualization/index.md) |
-| 第7章 | [怎样串起完整路径，并用工具验证自己的判断？](chapter_07_case_diagnostics/index.md) |
+| 阶段 | 从哪里读 | 读完能解释 |
+| --- | --- | --- |
+| 第 1–4 章：一个程序怎样运行 | [特权与系统调用](chapter_01_foundations/index.md)、[进程与线程](chapter_02_processes/index.md)、[调度实验](chapter_02_processes/03_cpu_scheduler_lab.md)、[并发与同步](chapter_03_concurrency/index.md) | 谁正在运行、谁在等、何时需要加锁 |
+| 第 5–7 章：程序怎样访问数据 | [虚拟内存](chapter_04_memory/index.md)、[文件和 I/O](chapter_05_storage_io/index.md)、[崩溃一致性](chapter_05_storage_io/02_journaling_crash_disk.md) | 一次访问如何完成，写入何时可恢复 |
+| 第 8–10 章：怎样隔离程序 | [权限与保护](chapter_06_protection_virtualization/01_protection_security.md)、[虚拟机](chapter_06_protection_virtualization/02_virtual_machines_containers.md)、[容器与镜像](chapter_06_protection_virtualization/03_image_to_process.md) | 哪些资源可见、谁允许访问、隔离的代价是什么 |
+| 第 11–13 章：怎样把任务交给集群 | [集群编排](chapter_08_workload_platform/01_jobs_and_admission.md)、[重试与恢复](chapter_08_workload_platform/02_retries_and_artifacts.md)、[MatrixInfra 案例](chapter_08_workload_platform/03_matrixinfra_case.md) | 任务在哪里等待，何时能恢复，产物如何追溯 |
 
-## 推荐阅读顺序
-
-第一次学习建议按章节顺序阅读。第1章给出特权转换和事件入口；第2章解释“谁正在运行”；第3章解释“多个执行流怎样共享状态”；第4章说明地址如何翻译；第5章再把持久化数据和设备接入这套模型。
-
-如果已有基础，可以围绕具体问题纵向阅读：
-
-- 调试程序卡住：进程状态 → 条件变量 → 死锁 → I/O 等待 → 诊断工具。
-- 调试内存抖动：地址空间 → 页表与 TLB → 缺页 → 页面置换 → 页缓存。
-- 调试文件读取慢：文件与 inode → 页缓存 → 块 I/O → 驱动与 DMA → 综合案例。
-- 理解容器：保护机制 → 虚拟内存 → 进程 → namespace/cgroup → 容器。
+第一次学习可以先手算一次调度和一次地址翻译，再完成一个本机 HTTP 进程的容器实验。[OSTEP](https://pages.cs.wisc.edu/~remzi/OSTEP/)可配合前三个阶段阅读；[MIT xv6](https://mit-pdos.github.io/xv6-riscv-book/)可用于对照内核实现。集群运行需要网络基础，建议先读<a href="../ComputerNetworks/index.html">网络课程的应用与传输层</a>。
 
 ## 学习方法
 

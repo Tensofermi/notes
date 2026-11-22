@@ -85,39 +85,47 @@ extra:
 use_directory_urls: false
 
 nav:
-  - 概述: index.md
-  - 第1章 抽象层次与整机视角:
-    - 章节概览: chapter_01_abstraction/index.md
-    - 抽象层次与接口契约: chapter_01_abstraction/abstraction_layers.md
-    - 计算机体系结构的历史演进: chapter_01_abstraction/historical_evolution.md
-  - 第2章 信息表示与数字逻辑:
-    - 章节概览: chapter_02_representation_logic/index.md
-    - 数制、补码、浮点数与字符: chapter_02_representation_logic/number_representation.md
-    - 布尔逻辑、组合电路与时序电路: chapter_02_representation_logic/digital_logic.md
-  - 第3章 指令系统结构:
-    - 章节概览: chapter_03_isa/index.md
-    - 指令格式与寻址方式: chapter_03_isa/instruction_format_addressing.md
-    - 最小汇编程序与 RISC/CISC: chapter_03_isa/assembly_risc_cisc.md
-  - 第4章 CPU 数据通路与控制:
-    - 章节概览: chapter_04_cpu/index.md
-    - 数据通路与指令周期: chapter_04_cpu/datapath_instruction_cycle.md
-    - 控制器：把指令变成控制信号: chapter_04_cpu/control_unit.md
-  - 第5章 流水线与冒险:
-    - 章节概览: chapter_05_pipeline/index.md
-    - 流水线、冒险、转发与停顿: chapter_05_pipeline/pipeline_hazards.md
-    - 控制冒险与分支预测: chapter_05_pipeline/branch_prediction.md
-  - 第6章 存储层次:
-    - 章节概览: chapter_06_memory/index.md
-    - 局部性、Cache 与主存: chapter_06_memory/hierarchy_cache.md
-    - 虚拟存储的硬件支持: chapter_06_memory/virtual_memory_hardware.md
-  - 第7章 I/O、性能与并行:
-    - 章节概览: chapter_07_io_parallel/index.md
-    - 总线、中断、DMA 与存储设备: chapter_07_io_parallel/io_interrupt_dma_storage.md
-    - 性能公式与 Amdahl 定律: chapter_07_io_parallel/performance_amdahl.md
-    - SIMD、多核与缓存一致性: chapter_07_io_parallel/parallelism_consistency.md
-  - 第8章 综合案例:
-    - 章节概览: chapter_08_case_study/index.md
-    - 一条 load/add/store 如何贯穿机器: chapter_08_case_study/load_add_store_walkthrough.md
-    - 跨层性能诊断与设计权衡: chapter_08_case_study/bottleneck_diagnosis.md
-  - 综合自测: self_assessment.md
-  - 参考资料: references.md
+  - "概述": index.md
+  - "第 1 章 从程序看整台机器":
+    - "章节概览": chapter_01_abstraction/index.md
+    - "抽象层次与接口契约": chapter_01_abstraction/abstraction_layers.md
+    - "体系结构的历史演进": chapter_01_abstraction/historical_evolution.md
+  - "第 2 章 信息怎样表示":
+    - "章节概览": chapter_02_representation_logic/index.md
+    - "数制、补码、浮点数与字符": chapter_02_representation_logic/number_representation.md
+    - "浮点数格式：范围与精度": chapter_02_representation_logic/floating_point_formats.md
+  - "第 3 章 从逻辑门到寄存器":
+    - "组合电路与时序电路": chapter_02_representation_logic/digital_logic.md
+  - "第 4 章 指令集与汇编":
+    - "章节概览": chapter_03_isa/index.md
+    - "指令格式与寻址方式": chapter_03_isa/instruction_format_addressing.md
+    - "最小汇编程序与 RISC/CISC": chapter_03_isa/assembly_risc_cisc.md
+    - "从汇编跳转到函数调用": chapter_03_isa/calling_convention.md
+  - "第 5 章 CPU 怎样执行指令":
+    - "章节概览": chapter_04_cpu/index.md
+    - "数据通路与指令周期": chapter_04_cpu/datapath_instruction_cycle.md
+    - "数据通路的控制器": chapter_04_cpu/control_unit.md
+  - "第 6 章 流水线与性能":
+    - "章节概览": chapter_05_pipeline/index.md
+    - "流水线、冒险与停顿": chapter_05_pipeline/pipeline_hazards.md
+    - "控制冒险与分支预测": chapter_05_pipeline/branch_prediction.md
+    - "性能公式与 Amdahl 定律": chapter_07_io_parallel/performance_amdahl.md
+  - "第 7 章 缓存、主存与局部性":
+    - "存储层次概览": chapter_06_memory/index.md
+    - "局部性、Cache 与主存": chapter_06_memory/hierarchy_cache.md
+  - "第 8 章 虚拟内存的硬件支持":
+    - "页表、TLB 和一次访存": chapter_06_memory/virtual_memory_hardware.md
+  - "第 9 章 I/O 与设备怎样搬数据":
+    - "设备与并行概览": chapter_07_io_parallel/index.md
+    - "总线、中断、DMA 与存储设备": chapter_07_io_parallel/io_interrupt_dma_storage.md
+    - "PCIe、网卡与 NVMe": chapter_07_io_parallel/device_data_paths.md
+  - "第 10 章 多核、GPU 与机器拓扑":
+    - "SIMD、多核与缓存一致性": chapter_07_io_parallel/parallelism_consistency.md
+    - "GPU、显存和服务器拓扑": chapter_07_io_parallel/gpu_and_server_topology.md
+  - "第 11 章 综合练习：从指令到 GPU":
+    - "章节概览": chapter_08_case_study/index.md
+    - "一条 load/add/store 如何贯穿机器": chapter_08_case_study/load_add_store_walkthrough.md
+    - "跨层性能诊断与设计权衡": chapter_08_case_study/bottleneck_diagnosis.md
+    - "一批数据怎样从磁盘进入 GPU": chapter_08_case_study/storage_to_gpu.md
+  - "综合自测": self_assessment.md
+  - "参考资料": references.md
