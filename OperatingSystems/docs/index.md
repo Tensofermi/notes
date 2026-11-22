@@ -6,6 +6,8 @@
 
 > 如何在共享而有限的硬件上，为许多程序提供方便、高效、可靠并且彼此隔离的运行环境？
 
+第一次读，可以在两个终端[运行同一段程序](chapter_02_processes/01_process_thread_context.md)，观察它们为什么能够分别等待和继续。然后用[两张小页表](chapter_04_memory/01_address_space_paging.md)算出同一个地址怎样指向不同的内存。能解释这两件事后，再用[同一个 HTTP 服务对照普通进程和容器](chapter_06_protection_virtualization/03_image_to_process.md)。
+
 ## 三个核心角色
 
 | 角色 | 解决的问题 | 典型抽象 |

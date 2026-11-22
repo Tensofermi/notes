@@ -14,6 +14,8 @@ c = a + b;
 
 它可能被翻译成一次 `load`、一次 `add` 和一次 `store`。短短三条指令会牵动寄存器、ALU、控制器、流水线、cache、页表、总线和主存。[从 load 到 store](chapter_08_case_study/load_add_store_walkthrough.md)会把这条路径完整走一遍。
 
+第一次读，可以先跟着[一条读取指令](chapter_04_cpu/datapath_instruction_cycle.md)区分「寄存器里的地址」和「从内存读出来的值」。接着用[三个相邻的读取](chapter_06_memory/hierarchy_cache.md)看为什么会命中缓存，最后再做[同一地址的三种访存结果](chapter_06_memory/virtual_memory_hardware.md)。到这一步再回看完整综合案例。
+
 ## 全站知识地图
 
 | 层次 | 核心问题 | 对上提供什么 |

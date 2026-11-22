@@ -8,6 +8,8 @@
 
 回答它需要同时理解 DNS 如何找地址、HTTP 如何表达请求、TLS 如何建立可信通道、TCP 或 QUIC 如何运输字节、IP 如何跨网络选路、以太网或 Wi-Fi 如何完成一跳传输。分层让我们可以逐层学习，但真正的网络行为始终是端到端的合作。
 
+第一次读，先[在自己电脑上发一个 HTTP 请求](chapter_02_application/04_socket_and_listening.md)，比较「有 HTTP 404 响应」和「连接没有建立」两种结果。接着[把六个乱序抵达的字节拼回去](chapter_03_transport/02_reliable_transport.md)，再读[发送方为什么有时要等](chapter_03_transport/03_flow_congestion_control.md)。暂时不知道各协议细节也可以先做这三个例子。
+
 ## 学习路线
 
 | 阶段 | 从哪里读 | 先做哪道练习 |

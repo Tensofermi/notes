@@ -2,6 +2,8 @@
 
 从一个可以手算的问题开始：四项任务到达时间不同，有的还要等其他任务完成，你会怎样决定谁先运行？课程先讲清数据怎么存、操作要付出多少成本，再用队列、堆和图一步步完成这个例子。
 
+如果只会写循环，可以先读[数组的五格插入](chapter_array_and_linkedlist/array.md)：画出每次搬动后哪一格改变。然后用[链表的同一组号码](chapter_array_and_linkedlist/linked_list.md)做同样的插入，回头看[为什么有的操作是 $O(1)$，有的是 $O(n)$](chapter_computational_complexity/time_complexity.md)。首次阅读选自己会的一种语言即可，其他语言的代码留作对照。
+
 ## 怎么读
 
 | 阶段 | 先掌握什么 | 可以动手做什么 |
