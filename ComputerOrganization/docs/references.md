@@ -8,6 +8,12 @@
 4. Andrew S. Tanenbaum, Todd Austin, *Structured Computer Organization*。擅长用层次化机器解释复杂系统。
 5. Berkeley CS61C 与 CMU 15-213 的公开课程材料。前者偏组成与 RISC-V，后者偏程序员视角的系统机制。
 
+## 中文视频选读
+
+- **哈尔滨工业大学《计算机组成原理》**。刘宏伟主讲，课程从整机结构入手，适合与本笔记的指令、存储和 I/O 主线对照。[哈工大 B 站课程](https://www.bilibili.com/video/BV1tun4z9E5z/) · [高教社课程页](https://icc.hep.com.cn/loadShowHome.action?courseInfoId=5000003401)
+- **北京大学《计算机组成》**。陆俊林主讲。读完[一次 `lw` 的数据通路](chapter_04_cpu/datapath_instruction_cycle.md)后，可看数据通路如何建立，再暂停预测访存指令的控制信号。B 站分集来自转载合集。[数据通路](https://www.bilibili.com/video/BV1Bq4y1t7ea/?p=29) · [访存控制](https://www.bilibili.com/video/BV1Bq4y1t7ea/?p=31) · [北大原课](https://www.coursera.org/learn/jisuanji-zucheng)
+- **知白书生《从零开始弄懂主存与 Cache 的地址映射》**。配合[组内查找与替换算例](chapter_06_memory/hierarchy_cache.md)，先手算组号，再判断组内哪一路命中。[Cache 专题](https://www.bilibili.com/video/BV1UB46eWE1X/)
+
 ## 规范与手册
 
 - *The RISC-V Instruction Set Manual, Volume I: Unprivileged ISA*。

@@ -7,6 +7,12 @@
 3. W. Richard Stevens, *TCP/IP Illustrated, Volume 1: The Protocols*。
 4. Douglas E. Comer, *Internetworking with TCP/IP, Volume One*。
 
+## 中文视频选读
+
+- **湖科大教书匠《计算机网络微课堂》**。先做时延小题，再看交换机怎样学习 MAC 地址。看交换机分集时，可以暂停预测第一帧会走哪些端口，以及回复到达后表里多了哪一项。[时延习题](https://www.bilibili.com/video/BV1c4411d7jb/?p=13) · [交换机自学习](https://www.bilibili.com/video/BV1c4411d7jb/?p=37) · [作者合集](https://www.bilibili.com/list/ml962700202?bvid=BV1c4411d7jb&oid=64605483)
+- **技术蛋老师的 Docker 网络模式讲解**。配合[容器网络](chapter_09_virtual_network/01_interfaces_bridges_tunnels.md)，先画出容器自己的监听地址和宿主发布的入口，再看 Bridge、Host、None 三种模式改变了哪一段路径。[Docker 网络模式视频](https://www.bilibili.com/video/BV1Aj411r71b/)
+- **CNCF × Alibaba 云原生公开课**。理解同机网桥以后再看 Kubernetes 的 CNI 段，追踪 Pod 网卡和地址由谁准备。B 站链接是转载分集。[理解 CNI](https://www.bilibili.com/video/BV1r7411r7h7/?p=26) · [课程原页](https://edu.aliyun.com/course/314164/)
+
 ## 关键标准
 
 - [RFC 8200: Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)

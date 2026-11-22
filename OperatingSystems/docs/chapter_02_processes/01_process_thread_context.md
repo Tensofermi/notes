@@ -97,6 +97,12 @@ python -c 'import os; n = input("n = "); print(os.getpid(), int(n) + 1)'
 
 这种设计可以降低任务切换成本，但运行时必须处理阻塞调用、抢占、公平性、栈管理和与调试工具的集成。它没有消除调度，只是增加了一层调度。
 
+??? question "goroutine 和线程池有什么关系？"
+
+    线程池通常让一组工作线程反复接任务。goroutine 则是 Go 运行时能安排、暂停和恢复的一条执行流，许多 goroutine 可以复用多个操作系统线程。
+
+    假设 G1 正在等待网络数据，G2 可以继续计算。Go 运行时可以先安排 G2 执行。数据就绪后，G1 再变为可运行，从等待位置继续。上层还可以用 goroutine 组成一个工作池，限制同时处理多少任务。一个概念描述执行流怎样调度，另一个描述一组工作者怎样接活。[B 站讨论](https://www.bilibili.com/video/BV1dVRdBpEze/#reply298964422961) · [Go 官方 FAQ](https://go.dev/doc/faq#goroutines)
+
 ## 什么是 CPU 上下文
 
 上下文是恢复执行流所需的处理器和内核状态，通常包括：

@@ -84,3 +84,5 @@ Kubernetes 的自定义资源定义（CRD）可以扩充 API 所支持的资源�
     前者看队列、项目配额、优先级及准入检查。后者看调度事件、节点可用资源、标签和拓扑约束。已放置后仍打不开进程，则看镜像、挂载、设备和运行时事件。
 
 参考 [Kubernetes 控制器](https://kubernetes.io/docs/concepts/architecture/controller/)、[Kueue 准入](https://kueue.sigs.k8s.io/docs/concepts/admission/)、[Kubernetes 调度器](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)与 [GPU 设备插件](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/)。
+
+做完任务 J 的实验，可以看 KubeCon China 2023 上的 KubeRay 与 Kueue 案例。暂停试着标出哪一步决定任务能否获准、哪一步决定 Pod 放在哪台机器，再对照演讲中的队列和公平共享。[B 站演讲](https://www.bilibili.com/video/BV1ej411h7Sb/) · [Kueue 项目视频目录](https://kueue.sigs.k8s.io/zh-cn/community/talks_and_presentations/)

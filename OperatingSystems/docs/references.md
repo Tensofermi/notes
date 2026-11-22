@@ -9,6 +9,12 @@
 3. Andrew S. Tanenbaum, Herbert Bos, *Modern Operating Systems*。重视设计比较、分布式系统和安全背景。
 4. Thomas Anderson, Michael Dahlin, *Operating Systems: Principles and Practice*。强调工程不变量、并发和系统构造。
 
+## 中文视频选读
+
+- **蒋炎岩《操作系统原理》**。2026 年第 29 讲可配合[虚拟机与容器](chapter_06_protection_virtualization/02_virtual_machines_containers.md)观看。先辨认哪个内核接收系统调用，再看 namespace、cgroup 和镜像分层各解决什么问题。[虚拟机和容器](https://www.bilibili.com/video/BV1uaEB66EAH/) · [授课讲义](https://jyywiki.cn/OS/2026/lect29.md)
+- **EfficLab《口袋操作系统》**。动画讲解基于 OSTEP。先看进程基础，再看进程调度与多级反馈队列，同时在纸上画出就绪、运行和等待三种状态。[B 站合集](https://www.bilibili.com/video/BV1JM4m1U71z/) · [配套代码](https://github.com/efficlab/pocket-os)
+- **KubeCon China 2023 的 KubeRay 与 Kueue 案例**。做过[双卡任务](chapter_08_workload_platform/01_jobs_and_admission.md)后，再看真实批任务为什么需要排队和公平共享。视频用当年的 API 展示，复现实验时可查现行文档。[字节跳动开源 B 站视频](https://www.bilibili.com/video/BV1ej411h7Sb/) · [Kueue 准入文档](https://kueue.sigs.k8s.io/docs/concepts/admission/)
+
 ## 实现与源码
 
 1. Russ Cox、Frans Kaashoek、Robert Morris 等，*xv6: a simple, Unix-like teaching operating system*。代码规模适中，适合跟踪系统调用、进程、页表、文件系统和驱动路径。
