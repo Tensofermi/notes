@@ -1,5 +1,7 @@
 # 参考资料
 
+第一次读网络时，可以先沿各章小例子动手。需要核对消息格式、边界条件或不同版本的行为，再根据章内链接查下面的协议标准。
+
 ## 教材
 
 1. James F. Kurose, Keith W. Ross, *Computer Networking: A Top-Down Approach*。本笔记采用自顶向下的主线。

@@ -19,7 +19,7 @@
 - *The RISC-V Instruction Set Manual, Volume I: Unprivileged ISA*。
 - *The RISC-V Instruction Set Manual, Volume II: Privileged Architecture*。
 - IEEE 754 浮点算术标准。
-- JEDEC DDR 与 NVM Express 公开规范，用于理解主存和 SSD 接口的真实约束。
+- JEDEC 发布的 DDR 内存规范与 NVM Express 发布的固态存储设备规范，可对照[主存的访问过程](chapter_06_memory/hierarchy_cache.md)与[设备上提交和完成读写的过程](chapter_07_io_parallel/device_data_paths.md)。
 
 ## 阅读方法
 

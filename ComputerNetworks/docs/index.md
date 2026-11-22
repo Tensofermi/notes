@@ -1,5 +1,7 @@
 # 计算机网络
 
+不妨先想一台电脑怎样把一张照片交给另一台。它先把照片拆成一小份一小份的数据，叫作**分组**。每份分组可以经过多段网线或无线连接，每一段叫作**链路**。下文的 URL 就是浏览器里的网址，HTTP 是浏览器和服务器约定如何写请求、如何写回应的规则。
+
 计算机网络解决的核心问题是：**如何让彼此独立、相隔很远、能力各异的设备，像在同一个系统中一样交换信息**。困难不只在“把比特送过去”，还在于路径会变化、分组会丢失、接收方速度有限、很多用户会竞争同一条链路，而且通信双方通常互不信任。
 
 这套笔记用一个贯穿始终的问题组织知识：
@@ -15,7 +17,7 @@
 | 阶段 | 从哪里读 | 先做哪道练习 |
 | --- | --- | --- |
 | 第 1–2 章：看见一次请求 | [网络基础](chapter_01_foundations/index.md)、[应用层](chapter_02_application/index.md) | 启动[本机 HTTP 服务](chapter_02_application/04_socket_and_listening.md)，比较连接失败与 HTTP 404 |
-| 第 3–4 章：把数据可靠送达 | [可靠传输](chapter_03_transport/02_reliable_transport.md)、[流量与拥塞控制](chapter_03_transport/03_flow_congestion_control.md) | 手推丢数据、丢 ACK 和乱序时的发送与确认 |
+| 第 3–4 章：把数据可靠送达 | [可靠传输](chapter_03_transport/02_reliable_transport.md)、[流量与拥塞控制](chapter_03_transport/03_flow_congestion_control.md) | 手推丢数据、丢收件回执 和乱序时的发送与确认 |
 | 第 5–7 章：找到路径与信任边界 | [网络层](chapter_04_network/index.md)、[链路层](chapter_05_link/index.md)、[TLS 与远程访问](chapter_06_security/index.md) | 标注跨子网请求每一段的地址和身份检查 |
 | 第 8–11 章：把机制接到实际系统 | [虚拟网络](chapter_09_virtual_network/01_interfaces_bridges_tunnels.md)、[服务入口](chapter_09_virtual_network/02_service_discovery_proxies.md)、[数据中心互连](chapter_10_data_center/index.md) | 用[Agent 工作站](chapter_07_case_study/02_agent_workstation.md)追踪一次请求与任务 |
 
@@ -42,8 +44,8 @@
 1. 它要解决什么失败模式？
 2. 它向上一层承诺什么服务？
 3. 报文中哪些字段支撑这个承诺？
-4. 状态保存在端系统还是网络中？
+4. 状态由通信两端的设备保存，还是由沿途设备保存？
 5. 它用什么资源换来了什么性质？
-6. 抓包时能看到哪些证据？
+6. 记录并查看实际收发的数据（抓包）时，能看到哪些证据？
 
 网络不是协议名词的堆积。真正的掌握，是能从一次请求的现象反推每一层可能发生了什么。

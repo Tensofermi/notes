@@ -2,7 +2,7 @@
 
 ## 试一条路时，记得安排怎么回来
 
-先用[两项序列](backtracking_algorithm.md)练习选择和撤销，再用[重复元素](permutations_problem.md)区分同层去重与删除输入。读到[子集和](subset_sum_problem.md)时，试着改变输入条件，检查原来的剪枝是否还安全。
+先用[两项序列](backtracking_algorithm.md)练习选择和撤销，再用[重复元素](permutations_problem.md)区分同层去重与删除输入。读到[子集和](subset_sum_problem.md)时，试着改变输入条件，看看原先可以提前放弃的尝试，在新条件下会不会给出答案。提前跳过注定无解的尝试，叫**剪枝**。
 
 ![回溯](../assets/covers/chapter_backtracking.jpg)
 

@@ -2,7 +2,7 @@
 
 ## 让同一组四个数分别走进几种排序
 
-先给相等的值加上标签，看[稳定性](sorting_algorithm.md)。再拿 `[4, 1, 3, 2]` 做一轮[冒泡](bubble_sort.md)和[选择](selection_sort.md)，比较每轮保证了什么。读完比较排序后，再尝试[只计数](counting_sort.md)有哪些前置条件。
+先给相等的值加上标签，看[排序后它们能否保持原来的先后](sorting_algorithm.md)。保持这个顺序，就是排序的**稳定性**。再拿 `[4, 1, 3, 2]` 做一轮[冒泡](bubble_sort.md)和[选择](selection_sort.md)，比较每轮保证了什么。读完比较排序后，再尝试[只计数](counting_sort.md)有哪些前置条件。
 
 ![排序](../assets/covers/chapter_sorting.jpg)
 

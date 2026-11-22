@@ -14,7 +14,7 @@
 
 ![最大切分乘积的问题定义](max_product_cutting_problem.assets/max_product_cutting_definition.png)
 
-假设我们将 $n$ 切分为 $m$ 个整数因子，其中第 $i$ 个因子记为 $n_i$ ，即
+设把长度 $n$ 切成 $m$ 段，第 $i$ 段长度记为 $n_i$。这些段长的和为 $n$，把它们相乘就得到这次切分的乘积。
 
 $$
 n = \sum_{i=1}^{m}n_i

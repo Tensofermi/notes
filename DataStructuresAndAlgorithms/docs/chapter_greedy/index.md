@@ -2,7 +2,7 @@
 
 ## 每次只留一个选择，先把理由讲明白
 
-用[最早结束的活动](interval_scheduling.md)练习交换论证。再比较[能分装的背包](fractional_knapsack_problem.md)与物品不可拆时会遇到的问题，养成改变一个条件就重新检查结论的习惯。
+用[最早结束的活动](interval_scheduling.md)练习这样证明：从一份已经最优的安排中换掉一项，看看换过之后是否依然最优。这种证明叫**交换论证**。再比较[能分装的背包](fractional_knapsack_problem.md)与物品不可拆时会遇到的问题，养成改变一个条件就重新检查结论的习惯。
 
 ![贪心](../assets/covers/chapter_greedy.jpg)
 
