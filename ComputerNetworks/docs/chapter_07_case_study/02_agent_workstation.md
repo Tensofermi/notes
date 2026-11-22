@@ -1,5 +1,13 @@
 # 综合练习：从远程请求到 Agent 沙箱
 
+## 页面说任务已接受，为什么几分钟后还没开始？
+
+假设入口返回任务号 `J7`，说明 API 已接收。工作进程可能还在处理前一个任务；也可能已经取到 `J7`，却在等沙箱准备目录。把请求 ID 对应到任务 ID，再按「API 记录 → 入队 → 启动 → 执行」查事件。这几步都可能记录成功或失败，有相同任务号才知道它们讲的是同一次尝试。
+
+??? question "用户关掉浏览器后，任务还可能继续吗？"
+
+    若任务由独立工作进程持有，且相应状态仍有效，可以继续。若工作进程或主机重启，还需要可恢复的任务记录和持久化数据。
+
 **先修**：[虚拟网络](../chapter_09_virtual_network/01_interfaces_bridges_tunnels.md)、[服务发现与代理](../chapter_09_virtual_network/02_service_discovery_proxies.md)、<a href="../../OperatingSystems/chapter_06_protection_virtualization/01_protection_security.html">操作系统的保护机制</a>。
 
 **目标**：能从用户请求追到执行进程，说明故障与权限分别在哪一层处理。

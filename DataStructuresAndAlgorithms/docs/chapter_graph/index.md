@@ -1,5 +1,9 @@
 # 图
 
+## 先定边的含义，再问下一步
+
+用[单向关注关系](graph.md)练习画箭头，再把同一张图写成[矩阵和邻接表](graph_operations.md)。接下来按[队列和回溯](graph_traversal.md)分别走一遍，最后改变图的问题，求[带权路径](shortest_paths.md)或[依赖顺序](topological_sort.md)。
+
 ![图](../assets/covers/chapter_graph.jpg)
 
 !!! abstract

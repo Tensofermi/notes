@@ -1,5 +1,9 @@
 # 数据结构
 
+## 同样的数据可以有几种表示
+
+用[排队顺序](classification_of_data_structure.md)区分逻辑和物理布局，再把四个位分别当作[无符号值或补码](number_encoding.md)。处理文本时，用[一个汉字和一个英文字母](character_encoding.md)区分字符数和字节数。
+
 ![数据结构](../assets/covers/chapter_data_structure.jpg)
 
 !!! abstract

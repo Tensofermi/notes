@@ -1,5 +1,9 @@
 # 初识算法
 
+## 先问要解决哪一个问题
+
+从[地铁换乘](algorithms_are_everywhere.md)体会目标不同为何会选不同路线，然后用[一组排队号码](what_is_dsa.md)分开数据和操作。最后试着[自己定一条平局规则](reason_about_algorithms.md)，看它怎样改变查找步骤。
+
 ![初识算法](../assets/covers/chapter_introduction.jpg)
 
 !!! abstract

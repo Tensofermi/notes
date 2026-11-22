@@ -1,5 +1,9 @@
 # 堆
 
+## 只关心最优候选时，让它待在最上面
+
+从[新的优先项如何往上走](heap.md)开始。已有整份列表时，试试[从底部建堆](build_heap.md)；每次只拿到一个新值时，练习[只保留前两名](top_k.md)。
+
 ![堆](../assets/covers/chapter_heap.jpg)
 
 !!! abstract

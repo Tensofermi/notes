@@ -1,5 +1,9 @@
 # 贪心
 
+## 每次只留一个选择，先把理由讲明白
+
+用[最早结束的活动](interval_scheduling.md)练习交换论证。再比较[能分装的背包](fractional_knapsack_problem.md)与物品不可拆时会遇到的问题，养成改变一个条件就重新检查结论的习惯。
+
 ![贪心](../assets/covers/chapter_greedy.jpg)
 
 !!! abstract
