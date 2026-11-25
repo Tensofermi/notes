@@ -1,6 +1,6 @@
 # HTTP 与 HTTPS
 
-你在浏览器按下回车后，浏览器要把「请给我这个页面」写成服务器看得懂的消息，服务器也要能告诉浏览器「找到了」或「没有这个页面」。**HTTP** 规定这些请求和回应怎样写。通过 [TLS](../chapter_06_security/01_tls.md) 保护这段通信时，我们通常称它为 **HTTPS**。
+你在浏览器按下回车，浏览器要把「请给我这个页面」写成服务器看得懂的消息，服务器也要能告诉浏览器「找到了」还是「没有这个页面」。这套请求与回应的写法就是**超文本传输协议**（HTTP，HyperText Transfer Protocol）；当它跑在 [TLS](../chapter_06_security/01_tls.md) 加密通道上时，就是我们常说的 **HTTPS**。HTTP 本身不复杂，但一个状态码背后藏着整个分层的故事——先从两个最常见的状态码看起。
 
 ## 同一个服务，返回 200 和 404 时哪里不同？
 
@@ -41,7 +41,7 @@ Connection: keep-alive
 ```http
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
-Content-Length: 18
+Content-Length: 15
 Cache-Control: max-age=60
 
 <h1>Hello!</h1>

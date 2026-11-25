@@ -1,10 +1,10 @@
 # 计算机组成原理
 
-一行 `c = a + b`，在程序里只是一次加法。在机器里，中央处理器（CPU）要拿到两个数、算出结果，再把结果放到下一步找得到的地方。这门课从这类小问题出发，看电路怎样表示和保存信息，一条指令怎样执行，多个设备又怎样一起工作。
+一行 `c = a + b`，在程序里只是一次加法；在机器里，**中央处理器（Central Processing Unit，CPU）**要先拿到两个数、算出结果，再把结果放到下一步找得到的地方。这行代码从写出来到真正算完，中间发生了什么？这门课就从这类小问题出发，看电路怎样表示和保存信息，一条指令怎样执行，多个设备又怎样一起工作。
 
 ## 为什么需要这门课
 
-假设换了数组的遍历顺序，结果相同，运行时间却差了好几倍。这时可以往下看一层。处理器通常先查靠近它的一小块快速存储，也就是**缓存（Cache）**。若所需数据没在这里，就得花时间到下一级取。这叫**缓存未命中**。
+假设你只是交换了数组两层循环的顺序，结果一模一样，运行时间却差出好几倍。问题出在哪？这时需要往下看一层：处理器读数据时，通常先查靠近它的一小块快速存储，也就是**缓存（cache）**。若所需数据恰好在这里，马上就能用；若不在，就得花时间到下一级去取——这叫**缓存未命中（cache miss）**。循环顺序改变的，正是数据落在缓存里的频率。
 
 一个贯穿全站的问题是：
 
@@ -12,7 +12,7 @@
 c = a + b;
 ```
 
-如果两个值都在内存，机器可以先用两条 `load` 把它们读进**寄存器**，即处理器内部少量可直接读写的位置。然后用 `add` 相加，再用 `store` 把结果写回内存。[从 load 到 store](chapter_08_case_study/load_add_store_walkthrough.md)会把这条路径走一遍。
+如果两个值都在内存，机器可以先用两条 `load` 把它们读进**寄存器（register）**——处理器内部少量可直接读写、速度最快的存储位置——然后用 `add` 相加，再用 `store` 把结果写回内存。[从 load 到 store](chapter_08_case_study/load_add_store_walkthrough.md)会把这条路径走一遍。
 
 第一次读，可以先跟着[一条读取指令](chapter_04_cpu/datapath_instruction_cycle.md)区分「寄存器里的地址」和「从内存读出来的值」。接着用[三个相邻的读取](chapter_06_memory/hierarchy_cache.md)看为什么会命中缓存，最后再做[同一地址的三种访存结果](chapter_06_memory/virtual_memory_hardware.md)。到这一步再回看完整综合案例。
 
@@ -26,18 +26,22 @@ c = a + b;
 | 存储与输入输出（I/O） | 处理器怎样拿到数据，又怎样和键盘、网卡、磁盘交换数据 | 可读写的内存与设备接口 |
 | 并行系统 | 多个执行单元怎样协作 | 更高吞吐量与可扩展性 |
 
+这张表自底向上读：每一层只向上一层兑现承诺，至于承诺怎样兑现，是本层内部的自由。表中的**指令集架构（Instruction Set Architecture，ISA）**是软硬件之间的契约，也是全站反复回到的参照点。
+
 ## 建议学习路线
 
 按章节顺序读最平滑。第一次学习时，先抓住三条主线：**状态存在哪里、数据往哪里走、谁决定下一步**。遇到细节时反复追问它属于哪条主线，知识就不会散成器件清单。
 
 | 阶段 | 学习路径 | 检验方式 |
 | --- | --- | --- |
-| 第 1–4 章 | 信息表示、数字逻辑、指令和[函数调用约定](chapter_03_isa/calling_convention.md) | 画出寄存器更新并读出简短汇编 |
-| 第 5–8 章 | CPU、流水线、Cache 和[地址翻译](chapter_06_memory/virtual_memory_hardware.md) | 跟踪一条 load，解释停顿和三种访存结果 |
-| 第 9–11 章 | [设备怎样往内存搬数据](chapter_07_io_parallel/io_interrupt_dma_storage.md)，[图形处理器（GPU）怎样接入整机](chapter_07_io_parallel/gpu_and_server_topology.md) | 画出[一批数据从磁盘到 GPU](chapter_08_case_study/storage_to_gpu.md)的路径，找出限制速度的环节 |
+| 第 1–3 章 | 信息表示、数字逻辑、指令和[函数调用约定](chapter_03_isa/calling_convention.md) | 画出寄存器更新并读出简短汇编 |
+| 第 4–6 章 | CPU、流水线、Cache 和[地址翻译](chapter_06_memory/virtual_memory_hardware.md) | 跟踪一条 load，解释停顿和三种访存结果 |
+| 第 7–8 章 | [设备怎样往内存搬数据](chapter_07_io_parallel/io_interrupt_dma_storage.md)，[图形处理器（GPU）怎样接入整机](chapter_07_io_parallel/gpu_and_server_topology.md) | 画出[一批数据从磁盘到 GPU](chapter_08_case_study/storage_to_gpu.md)的路径，找出限制速度的环节 |
 
 先写下自己的预测，再对照算例或[综合自测](self_assessment.md)。读到页表时，可以和<a href="../OperatingSystems/chapter_04_memory/01_address_space_paging.html">操作系统的分页</a>共用同一个地址算例。课程笔记可搭配 [Berkeley CS 61C](https://notes.cs61c.org/)和 [Nand to Tetris](https://www.nand2tetris.org/course)补看图解与硬件项目。
 
 ## 范围与限制
 
-核心示例采用 RISC-V，一套公开的指令规则。后几章也会看 GPU 怎样使用自己的内存（显存），以及多个设备怎样连接。遇到真实设备时，可以先查配置和实际连接关系，再用测量检验课内模型。
+核心示例采用 **RISC-V**，一套公开、可免费使用的指令集规范，因其简洁和开放而成为教学与工业界共同的选择。后几章也会看 GPU 怎样使用自己的内存（显存），以及多个设备怎样连接。遇到真实设备时，可以先查配置和实际连接关系，再用测量检验课内模型。
+
+准备好了，就从第 1 章开始：先看看同一行加法，在机器的每一层分别意味着什么。
